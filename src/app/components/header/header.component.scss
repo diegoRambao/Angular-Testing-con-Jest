@@ -1,0 +1,35 @@
+.navbar {
+  padding: 20px 0;
+  box-shadow: 0px 9px 15px -11px rgba(0, 0, 0, 0.1);
+  border-top: #f8f8f8;
+  background: #fff;
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &__link {
+      color: hsl(200, 15%, 8%);
+      font-weight: 800;
+      font-size: 1.4em;
+      text-decoration: none;
+    }
+
+    &__button {
+      border: none;
+      outline: none;
+      background: transparent;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 600;
+      font-size: 14px;
+      color: hsl(200, 15%, 8%);
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+}

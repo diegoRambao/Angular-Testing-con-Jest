@@ -1,0 +1,23 @@
+<a class="anchor">
+  <article class="container-card">
+    <img
+      class="container-card__image"
+      [src]="country.flag"
+      [alt]="'image of ' + country.name"
+    />
+    <div class="container-card__body">
+      <h3 class="container-card__title">{{ country.name }}</h3>
+      <ul class="container-card__list">
+        <li class="container-card__item">
+          <strong>Poulation: </strong> {{ country.population }}
+        </li>
+        <li class="container-card__item">
+          <strong>Region: </strong> {{ country.region }}
+        </li>
+        <li class="container-card__item">
+          <strong>Capital: </strong> {{ country.capital }}
+        </li>
+      </ul>
+    </div>
+  </article>
+</a>
