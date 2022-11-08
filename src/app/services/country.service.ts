@@ -1,18 +1,14 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs/internal/BehaviorSubject';
-import { environment } from 'src/environments/environment';
+import { environment } from '@src/environments/environment';
 
 export interface Country {
   name: string;
-  flag: Array<string>;
+  flag: string;
   population: number;
   region: string;
   capital: string;
-  nativeName: string;
-  subregion: string;
-  topLevelDomain: Array<string>;
-  border: Array<string>;
 }
 
 @Injectable({
@@ -31,5 +27,15 @@ export class CountryService {
       .subscribe((countries: Country[]): void => {
         this.contries.next(countries);
       });
+  }
+
+  public getCountriesWithPromise(): Promise<Country[]> {
+    return new Promise<Country[]>((resolve) => {
+      this.http
+        .get<Country[]>(`${environment.apiUrl}/all`)
+        .subscribe((data) => {
+          resolve(data);
+        });
+    });
   }
 }
