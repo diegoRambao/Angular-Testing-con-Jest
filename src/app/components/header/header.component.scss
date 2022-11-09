@@ -16,20 +16,5 @@
       text-decoration: none;
     }
 
-    &__button {
-      border: none;
-      outline: none;
-      background: transparent;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-weight: 600;
-      font-size: 14px;
-      color: hsl(200, 15%, 8%);
-
-      &:hover {
-        cursor: pointer;
-      }
-    }
   }
 }
