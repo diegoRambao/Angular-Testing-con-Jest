@@ -15,17 +15,17 @@ export interface Country {
   providedIn: 'root',
 })
 export class CountryService {
-  public contries: BehaviorSubject<Country[]> = new BehaviorSubject<Country[]>(
+  public countries: BehaviorSubject<Country[]> = new BehaviorSubject<Country[]>(
     []
   );
-
+  
   constructor(private http: HttpClient) {}
 
   public getCountries(): void {
     this.http
       .get<Country[]>(`${environment.apiUrl}/all`)
       .subscribe((countries: Country[]): void => {
-        this.contries.next(countries);
+        this.countries.next(countries);
       });
   }
 
