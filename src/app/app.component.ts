@@ -11,7 +11,7 @@ export class AppComponent {
   countries: Observable<Country[]>;
   searchValue: string = '';
   constructor(private countryService: CountryService) {
-    this.countries = this.countryService.contries.asObservable();
+    this.countries = this.countryService.countries.asObservable();
   }
 
   ngOnInit(): void {

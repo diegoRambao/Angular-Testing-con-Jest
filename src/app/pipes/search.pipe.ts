@@ -9,10 +9,11 @@ export class SearchPipe implements PipeTransform {
 
     const regexp = new RegExp(search, 'i');
     const properties = Object.keys(value[0]);
-    return [
-      ...value.filter((item: any) => {
-        return properties.some((property) => regexp.test(item[property]));
-      }),
-    ];
+    
+    const valuesFilter = value.filter((item: any) => {
+      return properties.some((property) => regexp.test(item[property]));
+    });
+
+    return valuesFilter;
   }
 }
