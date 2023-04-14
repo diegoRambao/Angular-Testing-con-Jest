@@ -1,35 +1,12 @@
 import { HttpClient } from "@angular/common/http";
 import { TestBed } from "@angular/core/testing";
 import { of } from "rxjs";
-import { Country, CountryService } from "./country.service";
+import { CountryService } from "./country.service";
+import { countriesMock } from "@src/mocks/country.mock";
 
 const httpClientMock = {
   get: jest.fn()
 }
-
-const countriesMock: Country[] = [
-  {
-    name: 'Brazil',
-    capital: 'Brasília',
-    population: 212559409,
-    region: 'Americas',
-    flag: 'https://flagcdn.com/br.svg',
-  },
-  {
-    name: 'Colombia',
-    capital: 'Bogotá',
-    population: 50882884,
-    region: 'Americas',
-    flag: 'https://flagcdn.com/co.svg',
-  },
-  {
-    name: 'Japan',
-    capital: 'Tokyo',
-    population: 125836021,
-    region: 'Asia',
-    flag: 'https://flagcdn.com/jp.svg',
-  },
-]
 
 describe('CountryService', () => {
   let service: CountryService;
